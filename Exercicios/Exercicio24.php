@@ -1,3 +1,16 @@
+<form action="" method="GET">
+    <label for="num1"> (peso 2) Informe a primeira nota: </label>
+    <input type="text" name="nota1" id="nota1">
+
+    <label for="num2"> (peso 3) Informe a segunda nota: </label>
+    <input type="text" name="nota2" id="nota2">
+
+    <label for="num2"> (peso 5) Informe a terceira nota: </label>
+    <input type="text" name="nota3" id="nota3">
+
+    <button type="submit">Enviar</button>
+</form>
+
 <?php
 
 //  Escreva um algoritmo que leia 3 notas de um aluno e calcule a médiafinal deste aluno, 
@@ -7,22 +20,16 @@ echo "Media Ponderada";
 
 echo "<hr>";
 
-echo " (peso 2) Informe a primeira nota: ";
-
-$nota1 = 6;
-echo $nota1;
+$nota1 = $_GET['nota1'];
+echo "A primeira nota informada foi de: " . $nota1;
 echo "<br>";
 
-echo " (peso 3) Informe a segunda nota: ";
-
-$nota2 = 4;
-echo $nota2;
+$nota2 = $_GET['nota2'];
+echo "A primeira nota informada foi de: " . $nota2;
 echo "<br>";
 
-echo " (peso 5) Informe a terceira nota nota: ";
-
-$nota3 = 6;
-echo $nota3;
+$nota3 = $_GET['nota3'];
+echo "A primeira nota informada foi de: " . $nota3;
 echo "<br>";
 
 $media = (($nota1 * 2) + ($nota2 * 3) + ($nota3 * 5)) / 10;

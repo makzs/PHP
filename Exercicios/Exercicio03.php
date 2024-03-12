@@ -1,19 +1,27 @@
+<form action="" method="GET">
+    <label for="num1">Informe o primeiro valor: </label>
+    <input type="text" name="num1" id="num1">
+
+    <label for="num2">Informe o segundo valor: </label>
+    <input type="text" name="num2" id="num2">
+
+    <button type="submit">Enviar</button>
+</form>
+
 <?php
 
 // faça um script que peça dois números e imprima a soma.
 
 echo "<hr>";
 
-echo "Informe o primeiro numero: ";
+$num1 = $_GET['num1'];
 
-$num1 = 20;
-echo $num1;
+echo "O primeiro valor é " . $num1;
 echo "<br>";
 
-echo "Informe o segundo numero: ";
+$num2 = $_GET['num2'];
 
-$num2 = 7;
-echo $num2;
+echo "O segundo valor é " . $num2;
 echo "<br>";
 
 echo "A soma dos numeros é de: " . $num1 + $num2;

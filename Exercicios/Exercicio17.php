@@ -1,3 +1,9 @@
+<form action="" method="GET">
+    <label for="num">Informe a velocidade em metros por segundo: </label>
+    <input type="text" name="num" id="num">
+    <button type="submit">Enviar</button>
+</form>
+
 <?php
 
 //Escreva um algoritmo que leia a velocidade de um objeto em m/s(metros por segundo), 
@@ -7,10 +13,8 @@ echo "Conversor metros por segundo para quilometros por hora";
 
 echo "<hr>";
 
-echo "Informe a velocidade em metros por segundo: ";
-
-$metros = 14;
-echo $metros;
+$metros = $_GET['num'];
+echo "O valor informado foi: " . $metros;
 echo "<br>";
 
 echo "<hr>";

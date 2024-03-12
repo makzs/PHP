@@ -1,28 +1,35 @@
+<form action="" method="GET">
+    <label for="num1">Informe o comprimento: </label>
+    <input type="text" name="comprimento" id="comprimento">
+
+    <label for="num2">Informe a largura: </label>
+    <input type="text" name="largura" id="largura">
+
+    <label for="num2">Informe a altura: </label>
+    <input type="text" name="altura" id="altura">
+
+    <button type="submit">Enviar</button>
+</form>
+
 <?php
 
 // Escreva um algoritmo que calcule e apresente o volume de uma caixa retangular por meio da seguinte fórmula: 
-// volume = comprimento xlargura x altura
+// volume = comprimento x largura x altura
 
 echo "Calculadora de volume de uma caixa";
 
 echo "<hr>";
 
-echo "Informe o comprimento da caixa: ";
-
-$comprimento = 20;
-echo $comprimento;
+$comprimento = $_GET['comprimento'];
+echo "O comprimento informado foi de: " . $comprimento;
 echo "<br>";
 
-echo "Informe a largura da caixa: ";
-
-$largura = 30;
-echo $largura;
+$largura = $_GET['largura'];
+echo "A largura informada foi de: " . $largura;
 echo "<br>";
 
-echo "Informe a altura da caixa: ";
-
-$altura = 50;
-echo $altura;
+$altura = $_GET['altura'];
+echo "A altura informada foi de: " . $altura;
 echo "<br>";
 
 $volume = $comprimento * $largura * $altura;

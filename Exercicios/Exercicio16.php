@@ -1,19 +1,26 @@
+<form action="" method="GET">
+    <label for="num1">Informe o primeiro valor: </label>
+    <input type="text" name="num1" id="num1">
+
+    <label for="num2">Informe o segundo valor: </label>
+    <input type="text" name="num2" id="num2">
+
+    <button type="submit">Enviar</button>
+</form>
+
+
 <?php
 
-// Escreva um algoritmo que leia dois números, calcule o quadrado decada um, some os quadrados e mostre o resultado.
+// Escreva um algoritmo que leia dois números, calcule o quadrado de cada um, some os quadrados e mostre o resultado.
 
 echo "<hr>";
 
-echo "Informe o primeiro valor: ";
-
-$num1 = 5;
-echo $num1;
+$num1 = $_GET['num1'];
+echo "O primeiro valor informado foi: " . $num1;
 echo "<br>";
 
-echo "Informe o segundo valor: ";
-
-$num2 = 10;
-echo $num2;
+$num2 = $_GET['num2'];
+echo "O primeiro valor informado foi: " . $num2;
 echo "<br>";
 
 echo "<hr>";

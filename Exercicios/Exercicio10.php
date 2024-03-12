@@ -1,3 +1,16 @@
+<form action="" method="GET">
+    <label for="num1">Informe o primeiro valor inteiro: </label>
+    <input type="text" name="valor1" id="valor1">
+
+    <label for="num2">Informe o segundo valor inteiro: </label>
+    <input type="text" name="valor2" id="valor2">
+
+    <label for="num2">Informe o primeiro numero real: </label>
+    <input type="text" name="valor3" id="valor3">
+
+    <button type="submit">Enviar</button>
+</form>
+
 <?php
 
 //  Faça um script que peça 2 números inteiros e um número real. Calcule e mostre:
@@ -7,22 +20,16 @@
 
 echo "<hr>";
 
-echo "Informe o primeiro numero inteiro: ";
-
-$int1 = 20;
-echo $int1;
+$int1 = $_GET['valor1'];
+echo "O primeiro valor é: " . $int1;
 echo "<br>";
 
-echo "Informe o segundo numero inteiro: ";
-
-$int2 = 30;
-echo $int2;
+$int2 = $_GET['valor2'];
+echo "O segundo valor é: " . $int2;
 echo "<br>";
 
-echo "Informe o primeiro numero real: ";
-
-$real1 = 15.5;
-echo $real1;
+$real1 = $_GET['valor3'];
+echo "O terceiro valor é: " . $real1;
 echo "<br>";
 
 echo "<hr>";

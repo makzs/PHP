@@ -1,3 +1,9 @@
+<form action="" method="GET">
+    <label for="num">Informe o valor em Fahrenheit: </label>
+    <input type="text" name="num" id="num">
+    <button type="submit">Enviar</button>
+</form>
+
 <?php
 
 // Faça um script que peça a temperatura em graus Fahrenheit, transforme e mostre a temperatura em graus Celsius. 
@@ -7,10 +13,8 @@ echo "Conversor Fahrenheit para Celsius";
 
 echo "<hr>";
 
-echo "Informe o valor em Fahrenheit: ";
-
-$Fahrenheit = 40;
-echo $Fahrenheit;
+$Fahrenheit = $_GET['num'];
+echo "O valor informado é " . $Fahrenheit;
 echo "<br>";
 
 echo "<hr>";

@@ -1,3 +1,9 @@
+<form action="" method="GET">
+    <label for="num">Informe um valor: </label>
+    <input type="text" name="num" id="num">
+    <button type="submit">Enviar</button>
+</form>
+
 <?php
 
 // Escreva um algoritmo que receba o valor de um produto e calcule umdesconto de 7%, 
@@ -7,15 +13,9 @@ echo "Calculadora de 7% de desconto";
 
 echo "<hr>";
 
-echo "Informe um valor: ";
-
-$vlr1 = 238;
-echo $vlr1;
-echo "<br>";
+$vlr1 = $_GET['num'];
 
 $sete = ($vlr1 * 7) / 100;
-
-echo "<hr>";
 
 echo "O valor original é igual a: " . $vlr1;
 echo "<br>";

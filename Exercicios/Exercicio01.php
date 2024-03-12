@@ -1,12 +1,16 @@
+<form action="" method="GET">
+    <label for="num">Informe um numero: </label>
+    <input type="text" name="num" id="num">
+    <button type="submit">Enviar</button>
+</form>
+
 <?php
 
-// Faça um script que peça um número e então mostre a mensagem “O número informado foi [número]”
+// Faça um script que peça um número e então mostre a mensagem “O númeroinformado foi [número]”
 
 echo "<hr>";
 
-echo "Informe um numero: " . "<br>";
-
-$numero = 5;
+$numero = $_GET['num'];
 
 echo "O numero informado foi " . $numero;
 
