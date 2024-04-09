@@ -20,4 +20,4 @@ for ($i = 0; $i < strlen($nome); $i++) {
 }
 
 echo "<br>";
-echo "Nome ";
+echo "Nome em piramide: <br>";
