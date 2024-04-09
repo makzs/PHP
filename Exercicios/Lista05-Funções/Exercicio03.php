@@ -20,3 +20,5 @@ function formulario($nome, $numeros)
     echo '<button type="submit">Enviar</button>';
     echo "</form>";
 }
+
+formulario("Retangulo", 1);
