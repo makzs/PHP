@@ -27,5 +27,3 @@ formulario("Retangulo", 1);
 
 $linhas = $_GET['linhas'];
 $colunas = $_GET['colunas'];
-
-echo "+-----------+" * $colunas;
