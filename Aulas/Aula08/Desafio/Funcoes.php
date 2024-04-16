@@ -1,5 +1,22 @@
 <?php
 
-echo print_r($_GET);
 $nome = $_GET["nomePessoa"];
-$sobrenome = $_GET["sobreNome"];
+$email = $_GET["email"];
+$senha = $_GET["senha"];
+
+function validar_nome_usuario($nome)
+{
+    if (ctype_alpha($nome)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validar_email($email)
+{
+}
+
+function validar_senha($senha)
+{
+}
