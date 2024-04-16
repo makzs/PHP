@@ -1,0 +1,18 @@
+<?php
+
+function formulario($mtd, ...$campos)
+{
+    echo "<form action=\"" . "method=\"$mtd\">";
+
+    for ($i = 0; $i < count($campos); $i++) {
+        echo "<label>" . ucfirst(strtolower($campos[$i])) . ":" .  "</label>";
+        echo '<input type="text" name="$campos[$i]' . ($i + 1) . '" id="$campos[$i]' . ($i + 1) . '">';
+        echo "<br>";
+    }
+
+    echo '<button type="submit">Enviar</button>';
+    echo "</form>";
+}
+
+$carro = "fusca";
+$mercado = "condor";
