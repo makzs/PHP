@@ -10,22 +10,34 @@
 <body>
     <h1>Formulario: </h1>
 
-    <form action="resposta.php">
-        <input type="submit" value="enviar">
+    <form action="registro_get.php" method='GET'>
+    <label for="">Nome: </label>';
+    <input type="text" name="nomePessoa" id="">
+
+    <label for="">Email: </label>
+    <input type="text" name="email" id="">
+
+    <label for="">Senha: </label>';
+    <input type="text" name="senha" id="">
+
+    <input type="submit" value="enviar">
     </form>
 
-    <form action="resposta.php" method="GET">
-        <label for="">Nome: </label>
-        <input type="text" name="nomePessoa" id="">
+    <?php
+    include "Funcoes.php";
 
-        <label for="">Email: </label>
-        <input type="text" name="email" id="">
+    $nome = $_GET["nome"];
+    $email = $_GET["email"];
+    $senha = $_GET["senha"];
 
-        <label for="">Senha: </label>
-        <input type="text" name="senha" id="">
+    if (validar_nome_usuario($nome) && validar_email($email) && validar_senha($senha)) {
+        header("Location: sucesso.php");
+    }
+    else{
+        header("Location: $erro.php");
+    }
 
-        <input type="submit" value="enviar">
-    </form>
+    ?>
 
 </body>
 
