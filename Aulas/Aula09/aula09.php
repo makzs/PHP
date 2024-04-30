@@ -20,6 +20,12 @@ $_SESSION["pessoa"] = [
 ];
 
 echo print_r($_SESSION);
+
+// resetar as variaveis
+session_unset();
+
+// destruir a sessao
+session_destroy();
 ?>
 
 <body style="background-color: <?= $cor // mesma coisa que <?php echo $cor; 
