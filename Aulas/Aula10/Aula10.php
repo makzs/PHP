@@ -11,32 +11,50 @@
     <h1>Login</h1>
 
     <?php
+    session_start();
     require "Validacao.php";
 
-    if (isset($_POST['usuario']) && isset($_POST['nome']) && isset($_POST['senha'])) {
-
-        $usuario = $_POST["usuario"];
-        $nome = $_POST["nome"];
-        $senha = $_POST["senha"];
-
-        $pessoa = array("usu" => $usuario, "nome" => $nome, "senha" => $senha);
-
-        $validacao = validarLogin($pessoa);
+    if (isset($_POST['deslogado'])) {
+        $_SESSION['logado'] = false;
     }
 
+    if ($_SESSION['logado'] == true) {
+        echo "Bem vindo " . $_SESSION['nomeLogado'];
+        echo "<br>";
+        echo '<form action="Aula10.php" method="post">';
+        echo "<input type='hidden' name='deslogado'>";
+        echo '<input type="submit" value="Deslogar">';
+        echo '</form>';
+    } else {
+        if (isset($_POST['usuario']) && isset($_POST['nome']) && isset($_POST['senha'])) {
 
-    if (isset($_POST['usuario']) && isset($_POST['nome']) && isset($_POST['senha'])) {
-        if ($validacao == true) {
-            echo "<br>";
-            echo "login feito com sucesso <br>";
-            echo "Bem vindo";
+            $usuario = $_POST["usuario"];
+            $nome = $_POST["nome"];
+            $senha = $_POST["senha"];
+
+            $pessoa = array("usu" => $usuario, "nome" => $nome, "senha" => $senha);
+
+            $validacao = validarLogin($pessoa);
+        }
+
+
+        if (isset($_POST['usuario']) && isset($_POST['nome']) && isset($_POST['senha'])) {
+            if ($validacao == true) {
+                echo "<br>";
+                echo "login feito com sucesso <br>";
+                echo "Bem vindo";
+                $_SESSION['logado'] = true;
+                $_SESSION['nomeLogado'] = $nome;
+                $_SESSION['usuarioLogado'] = $usuario;
+                $_SESSION['senhaLogado'] = $senha;
+            } else {
+                echo "Erro de login";
+                form();
+            }
         } else {
-            echo "Erro de login";
+            echo "Faça login!";
             form();
         }
-    } else {
-        echo "Faça login!";
-        form();
     }
     ?>
 
