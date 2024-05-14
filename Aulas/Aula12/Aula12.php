@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Aula 12</title>
 </head>
 
 <body>
@@ -32,10 +32,10 @@
 
             // echo "<br>" . $usu->senha;
 
-            if ($s === $usu->senha) {
+            if (password_verify($s, $usu->senha)) {
                 echo "Login :)";
             } else {
-                require "form-login.php"; // para testes
+                require "formularioLogin.php"; // para testes
                 echo "Senha Inválida :/";
             }
         } else {

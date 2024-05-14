@@ -40,6 +40,58 @@ $banco = new mysqli("localhost:3307", "root", "", "tercamanha");
 // echo "<br>S: " . $usu->senha;
 
 // 
+
+//echo password_hash("123", PASSWORD_DEFAULT);
+
+// insert
+function criarUsuario($usuario, $nome, $senha)
+{
+    global $banco;
+
+    $senha = password_hash($senha, PASSWORD_DEFAULT);
+
+    $q = "INSERT INTO usuarios(codigo, usuario, nome, senha) VALUES (NULL, '$usuario', '$nome', '$senha')";
+
+    $resp = $banco->query($q);
+    echo "<br> Query: " . $q;
+    echo var_dump($resp);
+}
+
+// criarUsuario("roberto100", "roberto", "111");
+// criarUsuario("maria23", "maria", "senha");
+// criarUsuario("clarinha_ofc", "clara", "senha123");
+
+// update
+function editarUsuario($nomeAlterar, $senha)
+{
+    global $banco;
+
+    $senha = password_hash($senha, PASSWORD_DEFAULT);
+
+    $q = "UPDATE usuarios SET senha='$senha' WHERE usuario='$nomeAlterar'";
+
+    $resp = $banco->query($q);
+    echo "<br> Query: " . $q;
+    echo var_dump($resp);
+}
+
+//editarUsuario("clarinha_ofc", "123456");
+
+//delete
+function deletarUsuario($nomeDeletar)
+{
+    global $banco;
+
+    $q = "DELETE FROM usuarios WHERE usuario='$nomeDeletar'";
+
+    $resp = $banco->query($q);
+    echo "<br> Query: " . $q;
+    echo var_dump($resp);
+}
+
+//deletarUsuario("maria23");
+// criarUsuario("maria23", "maria", "senha");
+
 ?>
 
 </pre>
